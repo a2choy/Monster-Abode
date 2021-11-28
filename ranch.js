@@ -129,6 +129,7 @@ class Monster {
     })
     update_stats()
   }
+  
   ranch_training_options.forEach(element => {
     var btn = document.createElement("button")
     btn.className = "grid-ranch-item"

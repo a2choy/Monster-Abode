@@ -6,11 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <script src="tabs.js" defer></script>
     <script src="ranch.js" defer></script>
+    <script src="shrine.js" defer></script>
+    <script src="market.js" defer></script>
 
     <!--<script src="save.js" defer></script>-->
 
     <link href="styles.css" rel="stylesheet" />
     <link href="ranch.css" rel="stylesheet" />
+    <link href="shrine.css" rel="stylesheet" />
+    <link href="market.css" rel="stylesheet" />
+    
     <title>Monster Abode</title>
   </head>
 
@@ -34,7 +39,6 @@
       <button style="display: inline-block" onclick="import_game()">Import Game</button>
       
     </header>
-    
 
     <div class="tab-content">
       <button id= "tmp_button" style="position: absolute; bottom: 150px; left: 30px;">tmp dialogue opener</button>
@@ -68,10 +72,39 @@
       <div id="shrine" data-tab-main-content>
         <div class=menu_container>
           <h1 class=layer_header>Shrine</h1>
-          <div class=layer_bg_div style="width: 600px; height: 400px; background-color: aquamarine;">
-
+          <div class=layer_bg_shrine>
+            <div class="card" id="card_1">
+              <div class="card-image">filler 1</div>
+              <div class="card-text">
+                <p>Some sort of lore description 1</p>
+              </div>
+              <div class="card-stats">
+                Pow: 1<br/>Int: 2<br/>Spd: 2<br/>Agi: 2
+              </div>
+            </div>
+            <div class="card" id="card_2">
+              <div class="card-image">filler 2</div>
+              <div class="card-text">
+                <p>Some sort of lore description 2</p>
+              </div>
+              <div class="card-stats">
+                Pow: 2<br/>Int: 1<br/>Spd: 2<br/>Agi: 2
+              </div>
+            </div>
+            <div class="card" id="card_3">
+              <div class="card-image">filler 3</div>
+              <div class="card-text">
+                <p>Some sort of lore description 3</p>
+              </div>
+              <div class="card-stats">
+                Pow: 1<br/>Int: 1<br/>Spd: 3<br/>Agi: 2
+              </div>
+            </div>
           </div>
+          <button class=layer_shrine_left id="layer_shrine_left">&#60;</button>
+          <button class=layer_shrine_right id="layer_shrine_right">&#62;</button>
           <button onclick="return_home()" class=layer_back>Back</button>
+          <div class=layer_shrine_monster id=layer_shrine_monster>Your monster is: </div>
         </div>
       </div>
       <div id="lab" data-tab-main-content>
