@@ -1,172 +1,170 @@
 /*basic css*/
 
-@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url("https://fonts.googleapis.com/css?family=Raleway");
 * {
-    font-family: Raleway;
+  font-family: Raleway;
 }
 
 body {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 h1 {
-    float:left;
+  float: left;
 }
 
 header {
-    border-bottom: 1px solid black;
-    font-size: larger;
-    padding: 10px;
+  border-bottom: 1px solid black;
+  font-size: larger;
+  padding: 10px;
 }
 
 button {
-    display: block;
-    justify-content: space-around;
-    list-style-type: none;
-    margin: 0;
-    padding-left: 10px;
-    padding-right: 10px;
-    border: 1px solid black;
+  display: block;
+  justify-content: space-around;
+  list-style-type: none;
+  margin: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 1px solid black;
 }
 
 h1 {
-    margin-left: 25px;
+  margin-left: 25px;
 }
 
 button:hover {
-    background-color: #AAA;
+  background-color: #aaa;
 }
 
 /*tabs in html main page*/
 
-
-
 [data-tab-main-content] {
-    display: none;
+  display: none;
 }
 
 .active[data-tab-main-content] {
-    display: block;
+  display: block;
 }
 
 .tabs {
-    display: block;
-    justify-content: space-around;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    border-right: 1px solid black;
-    width: 100px;
-    float: left;
+  display: block;
+  justify-content: space-around;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  border-right: 1px solid black;
+  width: 100px;
+  float: left;
 }
 
 .tab {
-    cursor: pointer;
-    padding: 10px;
-    border-bottom: 1px solid black;
+  cursor: pointer;
+  padding: 10px;
+  border-bottom: 1px solid black;
 }
 
 .tab.active {
-    background-color: #CCC;
-    border-bottom: 1px solid black;
+  background-color: #ccc;
+  border-bottom: 1px solid black;
 }
 
 .tab:hover {
-    background-color: #AAA;
+  background-color: #aaa;
 }
 
 .tab-content {
-    background-color: aliceblue;
-    width: 600px;
-    height: 400px;
-    float: left;
-    position: relative;
+  background-color: aliceblue;
+  width: 600px;
+  height: 400px;
+  float: left;
+  position: relative;
 }
 
 /*export and import*/
 
-.bg-modal{
-    z-index: 10;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.7);
-    position: absolute;
-    top: 0;
-    display: none;
-    justify-content: center;
-    align-items: center;
+.bg-modal {
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
 }
 
-.export-popup{
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    border-radius: 4px;
-    display: none;
-    background-color: white;
+.export-popup {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 4px;
+  display: none;
+  background-color: white;
 }
 
-.import-popup{
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    border-radius: 4px;
-    display: none;
-    background-color: white;
+.import-popup {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 4px;
+  display: none;
+  background-color: white;
 }
 
 /*hp bar css*/
-.hp-bar{
-    position: relative;
-    width: 130px;
-    height: 20px;
-    border: 1px solid black;
+.hp-bar {
+  position: relative;
+  width: 130px;
+  height: 20px;
+  border: 1px solid black;
 }
 
-.hp-bar-fill{
-    height:100%;
-    background: #59ea63;
-    transition: width 0.5s;
+.hp-bar-fill {
+  height: 100%;
+  background: #59ea63;
+  transition: width 0.5s;
 }
 
-.hp-bar-value{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
+.hp-bar-value {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
 }
 
 /*dialogue box*/
 
 .text span {
-    opacity: 0;
- }
- .text span.revealed {
-    opacity: 1;
- }
+  opacity: 0;
+}
+.text span.revealed {
+  opacity: 1;
+}
 
- .text span.green {
-    color: #27ae60;
- }
+.text span.green {
+  color: #27ae60;
+}
 
- .text {
-    z-index: 11;
-    font-size: 20px;
-    word-spacing: 0.2em;
-    background: rgb(243, 144, 144);
-    position: absolute;
-    margin: 10px;
-    padding: 10px;
-    bottom: 0px;
-    left: 0px;
-    width: 560px;
-    height: 80px;
-    line-height: 1.2em;
-    display: none;
- }
+.text {
+  z-index: 11;
+  font-size: 20px;
+  word-spacing: 0.2em;
+  background: rgb(243, 144, 144);
+  position: absolute;
+  margin: 10px;
+  padding: 10px;
+  bottom: 0px;
+  left: 0px;
+  width: 560px;
+  height: 80px;
+  line-height: 1.2em;
+  display: none;
+}

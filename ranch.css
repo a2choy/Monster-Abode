@@ -1,79 +1,98 @@
 .menu_container {
-    width: 600px;
-    height: 400px;
-    margin: 0;
-    position: relative;
+  width: 600px;
+  height: 400px;
+  margin: 0;
+  position: relative;
 }
 
 .layer_bg_div {
-    position: absolute;
-    z-index: 1;
-    left: 0px;
-    top: 0px;
-    width: 600px; 
-    height: 400px; 
-    background-color: aquamarine;
+  position: absolute;
+  z-index: 1;
+  left: 0px;
+  top: 0px;
+  width: 600px;
+  height: 400px;
+  background-color: aquamarine;
 }
 .layer_header {
-    position: absolute;
-    z-index: 2;
-    left: 20px;
-    top: 20px;
+  position: absolute;
+  z-index: 2;
+  left: 20px;
+  top: 20px;
 }
 
 .layer_back {
-    position: absolute;
-    z-index: 2;
-    right: 20px;
-    top: 20px;
-}
-
-.layer_ranch_actions {
-    position: absolute;
-    z-index: 2;
-    right: 20px;
-    top: 50px;
+  position: absolute;
+  z-index: 2;
+  right: 20px;
+  top: 20px;
 }
 
 .layer_ranch_popup {
-    position: absolute;
-    background-color: #ffffff;
-    z-index: 2;
-    width: 150px;
-    height: 100px;
-    left: 20px;
-    top: 100px;
-    display: none;
-    text-align: center;
-    vertical-align: middle;
-    justify-content: center;
-    align-items: center;
+  position: absolute;
+  background-color: #ffffff;
+  z-index: 2;
+  width: 150px;
+  height: 100px;
+  left: 20px;
+  top: 100px;
+  display: none;
+  text-align: center;
+  vertical-align: middle;
+  justify-content: center;
+  align-items: center;
 }
 
 .layer_ranch_info {
-    position: absolute;
-    background-color: #ffffff;
-    z-index: 2;
-    width: 150px;
-    height: 150px;
-    left: 20px;
-    top: 220px;
-    text-align: left;
-    vertical-align: middle;
+  position: absolute;
+  background-color: #ffffff;
+  z-index: 2;
+  width: 150px;
+  height: 150px;
+  left: 20px;
+  top: 220px;
+  text-align: left;
+  vertical-align: middle;
 }
 
 .grid-ranch-container {
-    display: grid;
-    grid-template-columns: auto auto;
-    background-color: #f37521;
-    padding: 10px;
+  position: absolute;
+  z-index: 2;
+  right: 20px;
+  top: 50px;
+  display: grid;
+  grid-template-columns: auto auto;
+  background-color: #f37521;
+  padding: 10px;
 }
 
 .grid-ranch-item {
-    background-color: rgba(255, 255, 255, 0.8);
-    margin: 5px;
-    padding: 5px;
-    font-size: 15px;
-    width: 100px;
-    text-align: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  margin: 5px;
+  padding: 5px;
+  font-size: 15px;
+  width: 100px;
+  text-align: center;
+}
+
+.grid-inventory-container {
+  position: absolute;
+  z-index: 2;
+  right: 20px;
+  bottom: 50px;
+  display: grid;
+  grid-template-columns: auto;
+  background-color: #f37521;
+  padding: 10px;
+  height: 100px;
+  overflow-y: scroll;
+}
+
+.grid-inventory-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  margin: 5px;
+  padding: 5px;
+  font-size: 15px;
+  width: 100px;
+  text-align: center;
 }

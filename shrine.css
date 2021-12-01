@@ -1,55 +1,54 @@
 .card {
-    display: grid;
-    grid-template-columns: 130px;
-    grid-template-rows: 20px 70px 100px;
-    grid-template-areas: "image" "text" "stats";
-  
-    border-radius: 18px;
-    background: white;
-    box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
-    font-family: roboto;
-    text-align: center;
-    
-  
-    transition: 0.5s ease;
-    cursor: pointer;
-    margin: 20px;
-  }
+  display: grid;
+  grid-template-columns: 130px;
+  grid-template-rows: 20px 70px 100px;
+  grid-template-areas: "image" "text" "stats";
+
+  border-radius: 18px;
+  background: white;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+  font-family: roboto;
+  text-align: center;
+
+  transition: 0.5s ease;
+  cursor: pointer;
+  margin: 20px;
+}
 
 .layer_bg_shrine {
-    z-index: 1;
-    width: 600px; 
-    height: 400px; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: aquamarine;
-    overflow: hidden;
+  z-index: 1;
+  width: 600px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: aquamarine;
+  overflow: hidden;
 }
 
 .layer_shrine_monster {
-    position: absolute;
-    width: 100%;
-    text-align: center;
-    font-size: 18px;
-    bottom: 15px
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  bottom: 15px;
 }
-  
+
 .card:hover {
-    transform: scale(1.15);
-    box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
+  transform: scale(1.15);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
 }
 
 .layer_shrine_left {
-    position: absolute;
-    z-index: 2;
-    left: 10px;
-    top: 50%;
+  position: absolute;
+  z-index: 2;
+  left: 10px;
+  top: 50%;
 }
 
 .layer_shrine_right {
-    position: absolute;
-    z-index: 2;
-    right: 10px;
-    top: 50%;
+  position: absolute;
+  z-index: 2;
+  right: 10px;
+  top: 50%;
 }

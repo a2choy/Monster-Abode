@@ -15,38 +15,70 @@
     <link href="ranch.css" rel="stylesheet" />
     <link href="shrine.css" rel="stylesheet" />
     <link href="market.css" rel="stylesheet" />
-    
+
     <title>Monster Abode</title>
   </head>
 
   <body>
     <div class="bg-modal">
       <div class="export-popup">
-        <input style="display: inline-block" type="text" id="export_save_data" readonly>
-        <button style="display: inline-block" onclick="copy_save()">Export save data</button>
+        <input
+          style="display: inline-block"
+          type="text"
+          id="export_save_data"
+          readonly
+        />
+        <button style="display: inline-block" onclick="copy_save()">
+          Export save data
+        </button>
         <button style="display: inline-block" onclick="exit_popup()">x</button>
       </div>
       <div class="import-popup">
-        <input style="display: inline-block" type="text" id="import_save_data">
-        <button style="display: inline-block" onclick="import_save()">Import save data</button>
+        <input
+          style="display: inline-block"
+          type="text"
+          id="import_save_data"
+        />
+        <button style="display: inline-block" onclick="import_save()">
+          Import save data
+        </button>
         <button style="display: inline-block" onclick="exit_popup()">x</button>
       </div>
     </div>
     <header>
       <p style="display: inline-block">Monster Abode v0.1</p>
-      <button style="display: inline-block" onclick="save_game()">Save Game</button>
-      <button style="display: inline-block" onclick="export_game()">Export Game</button>
-      <button style="display: inline-block" onclick="import_game()">Import Game</button>
-      
+      <button style="display: inline-block" onclick="save_game()">
+        Save Game
+      </button>
+      <button style="display: inline-block" onclick="export_game()">
+        Export Game
+      </button>
+      <button style="display: inline-block" onclick="import_game()">
+        Import Game
+      </button>
     </header>
 
     <div class="tab-content">
-      <button id= "tmp_button" style="position: absolute; bottom: 150px; left: 30px;">tmp dialogue opener</button>
-      <div class="bg-modal">
-      </div>
+      <button
+        id="tmp_button"
+        style="position: absolute; bottom: 150px; left: 30px"
+      >
+        tmp dialogue opener
+      </button>
+      <div class="bg-modal"></div>
       <div class="text">
-        <button style="position: absolute; bottom: 10px; right: 60px;" class="next">→</button>
-        <button style="position: absolute; bottom: 10px; right: 10px;" class="close">↵</button>
+        <button
+          style="position: absolute; bottom: 10px; right: 60px"
+          class="next"
+        >
+          →
+        </button>
+        <button
+          style="position: absolute; bottom: 10px; right: 10px"
+          class="close"
+        >
+          ↵
+        </button>
       </div>
       <div id="home" data-tab-main-content class="active">
         <ul class="tabs">
@@ -54,32 +86,33 @@
           <li data-tab-main="#shrine" class="tab">Shrine</li>
           <li data-tab-main="#lab" class="tab">Lab</li>
           <li data-tab-main="#data" class="tab">Data</li>
-          <li data-tab-main="#ranch" class="tab">Ranch</li>
+          <li data-tab-main="#ranch" id="ranch_btn" class="tab">Ranch</li>
         </ul>
         <h1>Home</h1>
       </div>
       <div id="market" data-tab-main-content>
-        <div class=menu_container>
-          <h1 class=layer_header>Market</h1>
-          <div class=layer_bg_div style="width: 600px; height: 400px; background-color: aquamarine;">
-            <div class=grid-market-container id="grid-market-container">
-
-            </div>
+        <div class="menu_container">
+          <h1 class="layer_header">Market</h1>
+          <div
+            class="layer_bg_div"
+            style="width: 600px; height: 400px; background-color: aquamarine"
+          >
+            <div class="grid-market-container" id="grid-market-container"></div>
           </div>
-          <button onclick="return_home()" class=layer_back>Back</button>
+          <button onclick="return_home()" class="layer_back">Back</button>
         </div>
       </div>
       <div id="shrine" data-tab-main-content>
-        <div class=menu_container>
-          <h1 class=layer_header>Shrine</h1>
-          <div class=layer_bg_shrine>
+        <div class="menu_container">
+          <h1 class="layer_header">Shrine</h1>
+          <div class="layer_bg_shrine">
             <div class="card" id="card_1">
               <div class="card-image">filler 1</div>
               <div class="card-text">
                 <p>Some sort of lore description 1</p>
               </div>
               <div class="card-stats">
-                Pow: 1<br/>Int: 2<br/>Spd: 2<br/>Agi: 2
+                Pow: 1<br />Int: 2<br />Spd: 2<br />Agi: 2
               </div>
             </div>
             <div class="card" id="card_2">
@@ -88,7 +121,7 @@
                 <p>Some sort of lore description 2</p>
               </div>
               <div class="card-stats">
-                Pow: 2<br/>Int: 1<br/>Spd: 2<br/>Agi: 2
+                Pow: 2<br />Int: 1<br />Spd: 2<br />Agi: 2
               </div>
             </div>
             <div class="card" id="card_3">
@@ -97,49 +130,51 @@
                 <p>Some sort of lore description 3</p>
               </div>
               <div class="card-stats">
-                Pow: 1<br/>Int: 1<br/>Spd: 3<br/>Agi: 2
+                Pow: 1<br />Int: 1<br />Spd: 3<br />Agi: 2
               </div>
             </div>
           </div>
-          <button class=layer_shrine_left id="layer_shrine_left">&#60;</button>
-          <button class=layer_shrine_right id="layer_shrine_right">&#62;</button>
-          <button onclick="return_home()" class=layer_back>Back</button>
-          <div class=layer_shrine_monster id=layer_shrine_monster>Your monster is: </div>
+          <button class="layer_shrine_left" id="layer_shrine_left">
+            &#60;
+          </button>
+          <button class="layer_shrine_right" id="layer_shrine_right">
+            &#62;
+          </button>
+          <button onclick="return_home()" class="layer_back">Back</button>
+          <div class="layer_shrine_monster" id="layer_shrine_monster">
+            Your monster is:
+          </div>
         </div>
       </div>
       <div id="lab" data-tab-main-content>
-        <div class=menu_container>
-          <h1 class=layer_header>Lab</h1>
-          <div class=layer_bg_div style="width: 600px; height: 400px; background-color: aquamarine;">
-
-          </div>
-          <button onclick="return_home()" class=layer_back>Back</button>
+        <div class="menu_container">
+          <h1 class="layer_header">Lab</h1>
+          <div
+            class="layer_bg_div"
+            style="width: 600px; height: 400px; background-color: aquamarine"
+          ></div>
+          <button onclick="return_home()" class="layer_back">Back</button>
         </div>
       </div>
       <div id="data" data-tab-main-content>
-        <div class=menu_container>
-          <h1 class=layer_header>Data</h1>
-          <div class=layer_bg_div style="width: 600px; height: 400px; background-color: aquamarine;">
-
-          </div>
-          <button onclick="return_home()" class=layer_back>Back</button>
+        <div class="menu_container">
+          <h1 class="layer_header">Data</h1>
+          <div
+            class="layer_bg_div"
+            style="width: 600px; height: 400px; background-color: aquamarine"
+          ></div>
+          <button onclick="return_home()" class="layer_back">Back</button>
         </div>
       </div>
       <div id="ranch" data-tab-main-content>
-        <div class=menu_container>
-          <h1 class=layer_header>Ranch</h1>
-          <div class=layer_bg_div>
-          </div>
-          <div class=layer_ranch_popup id="ranch_popup">
-          </div>
-          <div class=layer_ranch_info id="ranch_info">
-          </div>
-          <div class=layer_ranch_actions>
-            <div class=grid-ranch-container id="grid-ranch-container">
-              
-            </div>
-          </div>
-          <button onclick="return_home()" class=layer_back>Back</button>
+        <div class="menu_container">
+          <h1 class="layer_header">Ranch</h1>
+          <div class="layer_bg_div"></div>
+          <div class="layer_ranch_popup" id="ranch_popup"></div>
+          <div class="layer_ranch_info" id="ranch_info"></div>
+          <div class="grid-ranch-container" id="grid-ranch-container"></div>
+          <div class="grid-inventory-container" id="grid-inventory-container"></div>
+          <button onclick="return_home()" class="layer_back">Back</button>
         </div>
       </div>
     </div>
