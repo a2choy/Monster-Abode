@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="var.js" defer></script>
     <script src="tabs.js" defer></script>
     <script src="ranch.js" defer></script>
     <script src="shrine.js" defer></script>
@@ -65,20 +66,26 @@
       >
         tmp dialogue opener
       </button>
-      <div class="bg-modal"></div>
-      <div class="text">
-        <button
-          style="position: absolute; bottom: 10px; right: 60px"
-          class="next"
-        >
-          →
-        </button>
-        <button
-          style="position: absolute; bottom: 10px; right: 10px"
-          class="close"
-        >
-          ↵
-        </button>
+      <button
+        style="position: absolute; bottom: 10px; right: 10px"
+        class="close"
+      >
+        ↓
+      </button>
+      <div class="dialogue_box">
+        <div class="dialogue_char"></div>
+        <div class="text">
+          <button
+            style="position: absolute; bottom: 10px; right: 60px"
+            class="next"
+          >
+            →
+          </button>
+        </div>
+      </div>
+      <div
+            class="layer_hide_div"
+            style="z-index: 100; position: absolute; top: 400px; width: 600px; height: 100px; background-color: white">
       </div>
       <div id="home" data-tab-main-content class="active">
         <ul class="tabs">
@@ -172,9 +179,26 @@
           <div class="layer_bg_div"></div>
           <div class="layer_ranch_popup" id="ranch_popup"></div>
           <div class="layer_ranch_info" id="ranch_info"></div>
+
+          <div class="flex-ranch-container" id="flex-ranch-container">
+            <button class="flex-ranch-item" onclick="show_work()">Work</button>
+            <button class="flex-ranch-item" onclick="show_item()">Item</button>
+            <button class="flex-ranch-item" onclick="return_home()">
+              Town
+            </button>
+            <button class="flex-ranch-item" onclick="show_monster()">
+              Monster
+            </button>
+          </div>
+
           <div class="grid-ranch-container" id="grid-ranch-container"></div>
-          <div class="grid-inventory-container" id="grid-inventory-container"></div>
-          <button onclick="return_home()" class="layer_back">Back</button>
+          <div
+            class="grid-inventory-container"
+            id="grid-inventory-container"
+          ></div>
+          <button onclick="return_ranch()" class="layer_back" id="ranch_back">
+            Back
+          </button>
         </div>
       </div>
     </div>

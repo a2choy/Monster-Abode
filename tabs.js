@@ -32,41 +32,8 @@ function return_home() {
 
 /* dialogue box code */
 
-var container = document.querySelector(".text");
-
-var speeds = {
-  pause: 500, //Higher number = longer delay
-  slow: 120,
-  normal: 90,
-  fast: 40,
-  superFast: 10,
-};
-
-var dialogue = [];
-curr_dialogue = 0;
-dialogue_left = 0;
-delay_override = false;
-
-var text_lines_1 = [
-  { speed: speeds.slow, string: "Oh, hello!" },
-  { speed: speeds.pause, string: "", pause: true },
-  { speed: speeds.normal, string: "Have you seen my pet" },
-  { speed: speeds.fast, string: "frog", classes: ["green"] },
-  { speed: speeds.normal, string: "around?" },
-];
-
-var text_lines_2 = [
-  { speed: speeds.slow, string: "Oh wow!" },
-  { speed: speeds.pause, string: "", pause: true },
-  { speed: speeds.normal, string: "You have seen my pet" },
-  { speed: speeds.fast, string: "frog", classes: ["green"] },
-  { speed: speeds.normal, string: "next door." },
-];
-
-dialogue.push(text_lines_1);
-dialogue.push(text_lines_2);
-
-var characters = [];
+var text = document.querySelector(".text");
+var container = document.querySelector(".dialogue_box");
 
 function generate_characters(i) {
   characters = [];
@@ -78,7 +45,7 @@ function generate_characters(i) {
     line.string.split("").forEach((character) => {
       var span = document.createElement("span");
       span.textContent = character;
-      container.appendChild(span);
+      text.appendChild(span);
       characters.push({
         span: span,
         isSpace: character === " " && !line.pause,
@@ -90,7 +57,7 @@ function generate_characters(i) {
 }
 
 function remove_old_dialogue() {
-  var child_nodes = container.childNodes;
+  var child_nodes = text.childNodes;
   for (var i = child_nodes.length - 1; i >= 0; i--) {
     var child_node = child_nodes[i];
     if (child_node.nodeName == "SPAN") {
@@ -121,8 +88,7 @@ generate_characters(curr_dialogue);
 
 /* modal for dialogue box */
 document.getElementById("tmp_button").addEventListener("click", function () {
-  document.querySelector(".bg-modal").style.display = "flex";
-  document.querySelector(".text").style.display = "block";
+  document.querySelector(".dialogue_box").style.display = "block";
   //remove_old_dialogue()
   setTimeout(() => {
     reveal_one_character(characters);
@@ -144,7 +110,36 @@ document.querySelector(".next").addEventListener("click", function () {
   }
 });
 
+var id = null;
 document.querySelector(".close").addEventListener("click", function () {
-  document.querySelector(".bg-modal").style.display = "none";
-  document.querySelector(".text").style.display = "none";
+  var elem = document.querySelector(".dialogue_box");
+  if (dialogue_closed) {
+    var pos = 400;
+    clearInterval(id);
+    id = setInterval(frame, 5);
+    function frame() {
+      if (pos == 300) {
+        clearInterval(id);
+      } else {
+        pos--;
+        elem.style.top = pos + "px";
+      }
+    }
+    document.querySelector(".close").innerHTML = "↓";
+  } else {
+    var pos = 300;
+    clearInterval(id);
+    id = setInterval(frame, 5);
+    function frame() {
+      if (pos == 400) {
+        clearInterval(id);
+      } else {
+        pos++;
+        elem.style.top = pos + "px";
+      }
+    }
+    document.querySelector(".close").innerHTML = "↑";
+  }
+
+  dialogue_closed = !dialogue_closed;
 });

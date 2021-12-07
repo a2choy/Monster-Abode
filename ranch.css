@@ -53,6 +53,7 @@
   top: 220px;
   text-align: left;
   vertical-align: middle;
+  display: none;
 }
 
 .grid-ranch-container {
@@ -64,6 +65,7 @@
   grid-template-columns: auto auto;
   background-color: #f37521;
   padding: 10px;
+  display: none;
 }
 
 .grid-ranch-item {
@@ -86,9 +88,30 @@
   padding: 10px;
   height: 100px;
   overflow-y: scroll;
+  display: none;
 }
 
 .grid-inventory-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  margin: 5px;
+  padding: 5px;
+  font-size: 15px;
+  width: 100px;
+  text-align: center;
+}
+
+.flex-ranch-container {
+  position: absolute;
+  z-index: 2;
+  right: 20px;
+  top: 50px;
+  display: grid;
+  grid-template-columns: auto;
+  background-color: #f37521;
+  padding: 10px;
+}
+
+.flex-ranch-item {
   background-color: rgba(255, 255, 255, 0.8);
   margin: 5px;
   padding: 5px;

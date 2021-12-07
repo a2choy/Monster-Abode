@@ -154,17 +154,40 @@ button:hover {
 }
 
 .text {
-  z-index: 11;
   font-size: 20px;
   word-spacing: 0.2em;
   background: rgb(243, 144, 144);
   position: absolute;
-  margin: 10px;
+  bottom: 0px;
   padding: 10px;
+  left: 100px;
+  width: 480px;
+  height: 60px;
+  line-height: 1.2em;
+}
+
+.dialogue_box {
+  z-index: 11;
+  position: absolute;
   bottom: 0px;
   left: 0px;
-  width: 560px;
-  height: 80px;
-  line-height: 1.2em;
-  display: none;
+  height: 100px;
+  width: 600px;
+  display: block;
+}
+
+.dialogue_char {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  background: #aaa;
+  bottom: 0px;
+  left: 0px;
+}
+
+.close {
+  z-index: 12;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
 }
