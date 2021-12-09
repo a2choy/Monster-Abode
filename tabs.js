@@ -86,20 +86,19 @@ function reveal_one_character(list) {
 
 generate_characters(curr_dialogue);
 
-/* modal for dialogue box */
+/* modal for dialogue box 
 document.getElementById("tmp_button").addEventListener("click", function () {
   document.querySelector(".dialogue_box").style.display = "block";
   //remove_old_dialogue()
   setTimeout(() => {
     reveal_one_character(characters);
   }, 600);
-});
+}); */
 
 document.querySelector(".next").addEventListener("click", function () {
-  console.log(dialogue_left);
   if (dialogue_left <= 0) {
     delay_override = false;
-    curr_dialogue++;
+    curr_dialogue = 1;
     remove_old_dialogue();
     generate_characters(curr_dialogue);
     setTimeout(() => {
@@ -110,11 +109,14 @@ document.querySelector(".next").addEventListener("click", function () {
   }
 });
 
+
+//close dialogue box
 var id = null;
+var pos = 300;
+
 document.querySelector(".close").addEventListener("click", function () {
   var elem = document.querySelector(".dialogue_box");
   if (dialogue_closed) {
-    var pos = 400;
     clearInterval(id);
     id = setInterval(frame, 5);
     function frame() {
@@ -127,7 +129,6 @@ document.querySelector(".close").addEventListener("click", function () {
     }
     document.querySelector(".close").innerHTML = "↓";
   } else {
-    var pos = 300;
     clearInterval(id);
     id = setInterval(frame, 5);
     function frame() {

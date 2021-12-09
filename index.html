@@ -60,12 +60,12 @@
     </header>
 
     <div class="tab-content">
-      <button
+      <!--<button
         id="tmp_button"
         style="position: absolute; bottom: 150px; left: 30px"
       >
         tmp dialogue opener
-      </button>
+      </button>-->
       <button
         style="position: absolute; bottom: 10px; right: 10px"
         class="close"
@@ -85,7 +85,7 @@
       </div>
       <div
             class="layer_hide_div"
-            style="z-index: 100; position: absolute; top: 400px; width: 600px; height: 100px; background-color: white">
+            style="z-index: 19; position: absolute; top: 400px; width: 600px; height: 100px; background-color: white">
       </div>
       <div id="home" data-tab-main-content class="active">
         <ul class="tabs">
@@ -104,7 +104,6 @@
             class="layer_bg_div"
             style="width: 600px; height: 400px; background-color: aquamarine"
           >
-            <div class="grid-market-container" id="grid-market-container"></div>
           </div>
           <button onclick="return_home()" class="layer_back">Back</button>
         </div>
@@ -182,7 +181,7 @@
 
           <div class="flex-ranch-container" id="flex-ranch-container">
             <button class="flex-ranch-item" onclick="show_work()">Work</button>
-            <button class="flex-ranch-item" onclick="show_item()">Item</button>
+            <button class="flex-ranch-item" onclick="show_item_menu()">Item</button>
             <button class="flex-ranch-item" onclick="return_home()">
               Town
             </button>
@@ -190,12 +189,17 @@
               Monster
             </button>
           </div>
+          <div class="ranch_items" id="ranch_items">
+            <button class="flex-ranch-item" onclick="show_inventory()">Inventory</button>
+            <button class="flex-ranch-item" onclick="show_shop()">Shop</button>
+          </div>
 
           <div class="grid-ranch-container" id="grid-ranch-container"></div>
           <div
             class="grid-inventory-container"
             id="grid-inventory-container"
           ></div>
+          <div class="grid-market-container" id="grid-market-container"></div>
           <button onclick="return_ranch()" class="layer_back" id="ranch_back">
             Back
           </button>

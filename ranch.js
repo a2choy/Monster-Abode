@@ -5,37 +5,86 @@ ranch_back = document.getElementById("ranch_back");
 ranch_container = document.getElementById("grid-ranch-container");
 ranch_inventory_container = document.getElementById("grid-inventory-container");
 ranch_flex_container = document.getElementById("flex-ranch-container");
+ranch_items = document.getElementById("ranch_items");
+market_container = document.getElementById("grid-market-container");
 
-function return_ranch(){
-  ranch_flex_container.style.display = "block"
-  ranch_back.style.display = "none"
-  ranch_container.style.display = "none"
-  ranch_inventory_container.style.display = "none"
-  ranch_info.style.display = "none"
+function return_ranch() {
+  if(ranch_button_depth == 1){
+    ranch_flex_container.style.display = "block";
+    ranch_items.style.display = "none";
+    ranch_back.style.display = "none";
+    ranch_container.style.display = "none";
+    ranch_inventory_container.style.display = "none";
+    ranch_info.style.display = "none";
+    bg_modal.style.display = "none";
+    market_container.style.display = "none";
+    ranch_button_depth = 0;
+  }
+  else if(ranch_button_depth == 2){
+    show_item_menu()
+    ranch_button_depth = 1;
+  }
 }
 
-function show_work(){
-  ranch_flex_container.style.display = "none"
-  ranch_back.style.display = "block"
-  ranch_container.style.display = "grid"
-  ranch_inventory_container.style.display = "none"
-  ranch_info.style.display = "none"
+function show_work() {
+  ranch_button_depth = 1;
+  ranch_flex_container.style.display = "none";
+  ranch_items.style.display = "none";
+  ranch_back.style.display = "block";
+  ranch_container.style.display = "grid";
+  ranch_inventory_container.style.display = "none";
+  ranch_info.style.display = "none";
+  bg_modal.style.display = "none";
+  market_container.style.display = "none";
 }
 
-function show_item(){
-  ranch_flex_container.style.display = "none"
-  ranch_back.style.display = "block"
-  ranch_container.style.display = "none"
-  ranch_inventory_container.style.display = "block"
-  ranch_info.style.display = "none"
+function show_item_menu() {
+  ranch_button_depth = 1;
+  ranch_flex_container.style.display = "none";
+  ranch_items.style.display = "block";
+  ranch_back.style.display = "block";
+  ranch_container.style.display = "none";
+  ranch_inventory_container.style.display = "none";
+  ranch_info.style.display = "none";
+  bg_modal.style.display = "none";
+  market_container.style.display = "none";
 }
 
-function show_monster(){
-  ranch_flex_container.style.display = "none"
-  ranch_back.style.display = "block"
-  ranch_container.style.display = "none"
-  ranch_inventory_container.style.display = "none"
-  ranch_info.style.display = "block"
+function show_monster() {
+  ranch_button_depth = 1;
+  ranch_flex_container.style.display = "none";
+  ranch_items.style.display = "none";
+  ranch_back.style.display = "block";
+  ranch_container.style.display = "none";
+  ranch_inventory_container.style.display = "none";
+  ranch_info.style.display = "block";
+  bg_modal.style.display = "block";
+  market_container.style.display = "none";
+}
+
+function show_inventory() {
+  update_inventory();
+  ranch_button_depth = 2;
+  ranch_flex_container.style.display = "none";
+  ranch_items.style.display = "none";
+  ranch_back.style.display = "block";
+  ranch_container.style.display = "none";
+  ranch_inventory_container.style.display = "block";
+  ranch_info.style.display = "none";
+  bg_modal.style.display = "none";
+  market_container.style.display = "none";
+}
+
+function show_shop() {
+  ranch_button_depth = 2;
+  ranch_flex_container.style.display = "none";
+  ranch_items.style.display = "none";
+  ranch_back.style.display = "block";
+  ranch_container.style.display = "none";
+  ranch_inventory_container.style.display = "none";
+  ranch_info.style.display = "none";
+  bg_modal.style.display = "none";
+  market_container.style.display = "block";
 }
 
 function update_stats() {
@@ -141,7 +190,14 @@ ranch_training_options.forEach((element) => {
   ranch_container.appendChild(btn);
 });
 
-ranch_btn.addEventListener("click", (e) => {
+function update_inventory(){
+  var child_nodes = ranch_inventory_container.childNodes;
+  for (var i = child_nodes.length - 1; i >= 0; i--) {
+    var child_node = child_nodes[i];
+    if (child_node.className == "grid-inventory-item") {
+      child_node.parentNode.removeChild(child_node);
+    }
+  }
   for (const key of storage.keys()) {
     var btn = document.createElement("button");
     btn.className = "grid-inventory-item";
@@ -164,5 +220,9 @@ ranch_btn.addEventListener("click", (e) => {
 
     ranch_inventory_container.appendChild(btn);
   }
+}
+
+ranch_btn.addEventListener("click", (e) => {
+  update_inventory();
 });
 

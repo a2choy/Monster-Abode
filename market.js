@@ -1,5 +1,3 @@
-market_container = document.getElementById("grid-market-container");
-
 function add_storage(key) {
   if (!storage.has(key)) {
     storage.set(key, 1);

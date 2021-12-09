@@ -1,6 +1,8 @@
 //tabs.js
 dialogue_closed = false;
 
+bg_modal = document.querySelector(".bg-modal");
+
 var speeds = {
   pause: 500, //Higher number = longer delay
   slow: 120,

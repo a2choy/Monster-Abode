@@ -23,7 +23,7 @@
 
 .layer_back {
   position: absolute;
-  z-index: 2;
+  z-index: 21;
   right: 20px;
   top: 20px;
 }
@@ -46,11 +46,12 @@
 .layer_ranch_info {
   position: absolute;
   background-color: #ffffff;
-  z-index: 2;
+  z-index: 21;
   width: 150px;
   height: 150px;
-  left: 20px;
-  top: 220px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: left;
   vertical-align: middle;
   display: none;
@@ -81,7 +82,7 @@
   position: absolute;
   z-index: 2;
   right: 20px;
-  bottom: 50px;
+  top: 50px;
   display: grid;
   grid-template-columns: auto;
   background-color: #f37521;
@@ -118,4 +119,15 @@
   font-size: 15px;
   width: 100px;
   text-align: center;
+}
+
+.ranch_items {
+  position: absolute;
+  z-index: 2;
+  right: 20px;
+  top: 50px;
+  display: none;  
+  grid-template-columns: auto;
+  background-color: #f37521;
+  padding: 10px;
 }
