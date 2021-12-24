@@ -26,6 +26,7 @@
   z-index: 21;
   right: 20px;
   top: 20px;
+  display: none;
 }
 
 .layer_ranch_popup {
